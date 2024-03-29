@@ -17,4 +17,3 @@ host_network: true
 init: false
 map:
   - addon_config:rw
-image: davide125/{arch}-addon-homebridge
