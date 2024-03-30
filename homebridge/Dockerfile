@@ -1,11 +1,12 @@
 FROM homebridge/homebridge:2024-01-08
 
 # Relocate homebridge working directory so it can be persisted
-#RUN find /etc/s6-overlay/ -type f | xargs sed -i -E 's:([ "])/homebridge:\1/config:g'
-RUN ln -snf /config /homebridge
+RUN find /etc/s6-overlay/ -type f | xargs sed -i -E 's:([ "])/homebridge:\1/config:g'
+
 # add bashio
 ADD https://github.com/hassio-addons/bashio/archive/v0.16.2.tar.gz /tmp/bashio.tar.gz
 RUN apt-get update \
+    && apt-get upgrade -y \
     && apt-get install --no-install-recommends -y curl jq \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
