@@ -1,4 +1,4 @@
-FROM homebridge/homebridge:2024-01-08
+FROM homebridge/homebridge:2024-06-27
 
 # Relocate homebridge working directory so it can be persisted
 RUN find /etc/s6-overlay/ -type f | xargs sed -i -E 's:([ "])/homebridge:\1/config:g'
