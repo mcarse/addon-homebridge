@@ -28,4 +28,4 @@ RUN mkdir -p /etc/s6-overlay/s6-rc.d/banner && \
     chmod +x /etc/s6-overlay/s6-rc.d/banner/script && \
     sed -i '1 s/^.*$/#!\/command\/with-contenv bashio/' /etc/s6-overlay/s6-rc.d/banner/script
 RUN /opt/homebridge/bin/hb-service update-node --allow-root
-RUN cd /config ; npm install -g $(npm outdated -g | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)
+#RUN cd /config ; npm install -g $(npm outdated -g | cut -d' ' -f 1 | sed '1d' | xargs -I '$' echo '$@latest' | xargs echo)
